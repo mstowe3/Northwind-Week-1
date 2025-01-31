@@ -1,0 +1,13 @@
+body {
+    font-family: 'Fjalla One', sans-serif;
+    background-color: #000000; /* Light grey background */
+}
+
+a {
+    color: #000000; /* Bootstrap primary color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
