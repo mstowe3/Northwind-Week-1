@@ -21,59 +21,111 @@
     
     <!-- Client CSS -->
     <link rel="stylesheet" href="client.css" />
+    <script src="discount.js"></script>
     
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-primary-subtle">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><i class="bi bi-compass"></i> Northwind</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-box"></i> Products
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-list"></i> Browse Categories</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-search"></i> Product Search</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-tag"></i> Current Discounts</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person"></i> Customers
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-person-plus"></i> Register</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-in-right"></i> Sign In</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><i class="bi bi-compass"></i> Northwind</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-database"></i> Products
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#"><i class="bi bi-list"></i> Browse Categories</a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-search"></i> Product Search</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-tags"></i> Current Discounts</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-people"></i> Customers
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#"><i class="bi bi-person-vcard"></i> Register</a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-key"></i> Sign In</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-none d-md-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i><span class="visually-hidden">Search</span></button>
+          </form>
         </div>
+      </div>
     </nav>
-    
-    <div class="container-fluid mt-4">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Welcome to Northwind!</h5>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Explore our products and services.</p>
-                        <p class="card-text">Check out our latest discounts!</p>
-                    </div>
-                </div>
-            </div>
+    <div class="container-fluid">
+      <div class="p-4 m-2 mt-4 rounded-3 border border-secondary-subtle">
+        <h1 class="display-4 fw-bold">
+            Northwind
+        </h1>
+        <p class="fs-4">
+            We have the best prices and selection of high quality foods &amp; beverages on the planet! Check out our featured discounts below.
+        </p>
+        <hr class="my-4">
+        <p class="fs-5">For exceptional international quisuine, look no further.</p>
+        <a class="btn btn-outline-primary btn-lg" href="#" role="button"><i class="bi bi-bag"></i> Order Now</a>
+      </div>
+      <div class="row p-2 m-2" id="discount-row">
+        <!-- First Discount Column -->
+        <div class="col px-2 py-4">
+          <h3>Tis the seasoning</h3>
+          <div class="mb-4">
+            Order today! Save 12.5% on Chef Anton's Italian Seasoning.
+            You don't want to make Chef Anton mad, do you?
+          </div>
+          <i>Discount expires: 2/25/2025</i><br />
+          <i class="bi bi-receipt"></i>
+          <a href="#" class="discount" data-product="Chef Anton's Italian Seasoning" data-code="CHEF1234">Discount</a>
         </div>
-    </div>
     
-</body>
-
-</html>
+        <!-- Second Discount Column -->
+        <div class="col px-2 py-4">
+          <h3>Go Green</h3>
+          <div class="mb-4">
+            Genen Shouyu goes on sale very rarely.
+            Order now to save 10% off our already low price.
+          </div>
+          <i>Discount expires: 2/25/2025</i><br />
+          <i class="bi bi-receipt"></i>
+          <a href="#" class="discount" data-product="Genen Shouyu" data-code="GENEN5678">Discount Code</a>
+        </div>
+    
+        <!-- Third Discount Column -->
+        <div class="col px-2 py-4">
+          <h3>Half Price</h3>
+          <div class="mb-4">
+            Just because you can't pronounce "Schoggi
+            Schokolade" doesn't mean you shouldn't 
+            buy it. Get it now for 50%!
+          </div>
+          <i>Discount expires: 2/25/2025</i><br />
+          <i class="bi bi-receipt"></i>
+          <a href="#" class="discount" data-product="Schoggi Schokolade" data-code="SCHOGGI8901">Discount Code</a>
+        </div>
+      </div>
+    </div>
+    <!-- toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto" id="product">Product</strong>
+          <small class="text-body-secondary">discount title</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          Discount Code: 1234
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
