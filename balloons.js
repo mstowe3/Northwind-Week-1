@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Uncheck all boxes by default (Firefox)
-  document.querySelectorAll('.form-check-input').forEach(c => c.checked = false);
+  const checkboxes = document.querySelectorAll('.form-check-input');
+  checkboxes.forEach(c => c.checked = false);
 
   // Toast for no balloons selected
   document.getElementById("submit").addEventListener("click", function () {
-    const checkboxes = document.querySelectorAll(".form-check-input");
     const noneSelected = Array.from(checkboxes).every(checkbox => !checkbox.checked);
     if (noneSelected) {
       const toastDiv = document.createElement("div");
@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("checkbox-card").appendChild(checkAllBtn);
 
   checkAllBtn.addEventListener("click", function () {
-    const checkboxes = document.querySelectorAll(".form-check-input");
     const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
     checkboxes.forEach(checkbox => checkbox.checked = !allChecked);
     
